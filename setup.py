@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    CDR API
+    fraudapi
 
-    
+    Easily and directly scan and block fraudulent security threats in input.  # noqa: E501
 
     OpenAPI spec version: v1
     
@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "cloudmersive_cdr_api_client"
+NAME = "cloudmersive_fraud_detection_api_client"
 VERSION = "3.0.0"
 # To install the library, run the following
 #
@@ -36,15 +36,15 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="CDR API",
+    description="fraudapi",
     author_email="",
-    url="https://cloudmersive.com/cdr-api",
-    keywords=["Swagger", "CDR API"],
+    url="https://cloudmersive.com/ai-fraud-detection-api",
+    keywords=["Swagger", "fraudapi"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description=long_description,
     long_description_content_type='text/markdown'
-    
+    Easily and directly scan and block fraudulent security threats in input.  # noqa: E501
 
 )

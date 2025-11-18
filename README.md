@@ -4,7 +4,7 @@ Easily and directly scan and block fraudulent security threats in input.
 This Python package provides a native API client for [Cloudmersive Fraud Detection API](https://cloudmersive.com/ai-fraud-detection-api)
 
 - API version: v1
-- Package version: 3.0.0
+- Package version: 3.0.1
 - Build package: io.swagger.codegen.languages.PythonClientCodegen
 
 ## Requirements.

@@ -39,7 +39,10 @@ class AdvancedFraudDetectionResult(object):
         'contains_asset_transfer': 'bool',
         'contains_purchase_agreement': 'bool',
         'contains_employment_agreement': 'bool',
-        'analysis_rationale': 'str'
+        'contains_expired_document': 'bool',
+        'contains_ai_generated_content': 'bool',
+        'analysis_rationale': 'str',
+        'document_class': 'str'
     }
 
     attribute_map = {
@@ -51,10 +54,13 @@ class AdvancedFraudDetectionResult(object):
         'contains_asset_transfer': 'ContainsAssetTransfer',
         'contains_purchase_agreement': 'ContainsPurchaseAgreement',
         'contains_employment_agreement': 'ContainsEmploymentAgreement',
-        'analysis_rationale': 'AnalysisRationale'
+        'contains_expired_document': 'ContainsExpiredDocument',
+        'contains_ai_generated_content': 'ContainsAiGeneratedContent',
+        'analysis_rationale': 'AnalysisRationale',
+        'document_class': 'DocumentClass'
     }
 
-    def __init__(self, successful=None, clean_result=None, fraud_risk_level=None, contains_financial_liability=None, contains_sensitive_information_collection=None, contains_asset_transfer=None, contains_purchase_agreement=None, contains_employment_agreement=None, analysis_rationale=None):  # noqa: E501
+    def __init__(self, successful=None, clean_result=None, fraud_risk_level=None, contains_financial_liability=None, contains_sensitive_information_collection=None, contains_asset_transfer=None, contains_purchase_agreement=None, contains_employment_agreement=None, contains_expired_document=None, contains_ai_generated_content=None, analysis_rationale=None, document_class=None):  # noqa: E501
         """AdvancedFraudDetectionResult - a model defined in Swagger"""  # noqa: E501
 
         self._successful = None
@@ -65,7 +71,10 @@ class AdvancedFraudDetectionResult(object):
         self._contains_asset_transfer = None
         self._contains_purchase_agreement = None
         self._contains_employment_agreement = None
+        self._contains_expired_document = None
+        self._contains_ai_generated_content = None
         self._analysis_rationale = None
+        self._document_class = None
         self.discriminator = None
 
         if successful is not None:
@@ -84,8 +93,14 @@ class AdvancedFraudDetectionResult(object):
             self.contains_purchase_agreement = contains_purchase_agreement
         if contains_employment_agreement is not None:
             self.contains_employment_agreement = contains_employment_agreement
+        if contains_expired_document is not None:
+            self.contains_expired_document = contains_expired_document
+        if contains_ai_generated_content is not None:
+            self.contains_ai_generated_content = contains_ai_generated_content
         if analysis_rationale is not None:
             self.analysis_rationale = analysis_rationale
+        if document_class is not None:
+            self.document_class = document_class
 
     @property
     def successful(self):
@@ -272,6 +287,52 @@ class AdvancedFraudDetectionResult(object):
         self._contains_employment_agreement = contains_employment_agreement
 
     @property
+    def contains_expired_document(self):
+        """Gets the contains_expired_document of this AdvancedFraudDetectionResult.  # noqa: E501
+
+        True if the document is expired  # noqa: E501
+
+        :return: The contains_expired_document of this AdvancedFraudDetectionResult.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_expired_document
+
+    @contains_expired_document.setter
+    def contains_expired_document(self, contains_expired_document):
+        """Sets the contains_expired_document of this AdvancedFraudDetectionResult.
+
+        True if the document is expired  # noqa: E501
+
+        :param contains_expired_document: The contains_expired_document of this AdvancedFraudDetectionResult.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_expired_document = contains_expired_document
+
+    @property
+    def contains_ai_generated_content(self):
+        """Gets the contains_ai_generated_content of this AdvancedFraudDetectionResult.  # noqa: E501
+
+        True if the document contains AI generated content  # noqa: E501
+
+        :return: The contains_ai_generated_content of this AdvancedFraudDetectionResult.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_ai_generated_content
+
+    @contains_ai_generated_content.setter
+    def contains_ai_generated_content(self, contains_ai_generated_content):
+        """Sets the contains_ai_generated_content of this AdvancedFraudDetectionResult.
+
+        True if the document contains AI generated content  # noqa: E501
+
+        :param contains_ai_generated_content: The contains_ai_generated_content of this AdvancedFraudDetectionResult.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_ai_generated_content = contains_ai_generated_content
+
+    @property
     def analysis_rationale(self):
         """Gets the analysis_rationale of this AdvancedFraudDetectionResult.  # noqa: E501
 
@@ -293,6 +354,29 @@ class AdvancedFraudDetectionResult(object):
         """
 
         self._analysis_rationale = analysis_rationale
+
+    @property
+    def document_class(self):
+        """Gets the document_class of this AdvancedFraudDetectionResult.  # noqa: E501
+
+        Standardized class of the input document  # noqa: E501
+
+        :return: The document_class of this AdvancedFraudDetectionResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._document_class
+
+    @document_class.setter
+    def document_class(self, document_class):
+        """Sets the document_class of this AdvancedFraudDetectionResult.
+
+        Standardized class of the input document  # noqa: E501
+
+        :param document_class: The document_class of this AdvancedFraudDetectionResult.  # noqa: E501
+        :type: str
+        """
+
+        self._document_class = document_class
 
     def to_dict(self):
         """Returns the model properties as a dict"""

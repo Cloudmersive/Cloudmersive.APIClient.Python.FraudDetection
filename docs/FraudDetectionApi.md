@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **document_detect_fraud_advanced**
-> AdvancedFraudDetectionResult document_detect_fraud_advanced(user_email_address=user_email_address, user_email_address_verified=user_email_address_verified, input_file=input_file)
+> AdvancedFraudDetectionResult document_detect_fraud_advanced(preprocessing=preprocessing, result_cross_check=result_cross_check, user_email_address=user_email_address, user_email_address_verified=user_email_address_verified, input_file=input_file)
 
 Advanced AI Fraud Detection for Documents
 
@@ -85,13 +85,15 @@ configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = cloudmersive_fraud_detection_api_client.FraudDetectionApi(cloudmersive_fraud_detection_api_client.ApiClient(configuration))
+preprocessing = 'preprocessing_example' # str | Optional: Set the level of image pre-processing to enhance accuracy.  Possible values are 'Auto' and 'None'.  Default is Auto. (optional)
+result_cross_check = 'result_cross_check_example' # str | Optional: Set the level of output accuracy cross-checking to perform on the input.  Possible values are 'None' and 'Advanced'.  Default is None. (optional)
 user_email_address = 'user_email_address_example' # str | User email address for context (optional) (optional)
 user_email_address_verified = true # bool | True if the user's email address was verified (optional) (optional)
 input_file = '/path/to/file.txt' # file | Input document, or photos of a document, to perform fraud detection on (optional)
 
 try:
     # Advanced AI Fraud Detection for Documents
-    api_response = api_instance.document_detect_fraud_advanced(user_email_address=user_email_address, user_email_address_verified=user_email_address_verified, input_file=input_file)
+    api_response = api_instance.document_detect_fraud_advanced(preprocessing=preprocessing, result_cross_check=result_cross_check, user_email_address=user_email_address, user_email_address_verified=user_email_address_verified, input_file=input_file)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FraudDetectionApi->document_detect_fraud_advanced: %s\n" % e)
@@ -101,6 +103,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **preprocessing** | **str**| Optional: Set the level of image pre-processing to enhance accuracy.  Possible values are &#39;Auto&#39; and &#39;None&#39;.  Default is Auto. | [optional] 
+ **result_cross_check** | **str**| Optional: Set the level of output accuracy cross-checking to perform on the input.  Possible values are &#39;None&#39; and &#39;Advanced&#39;.  Default is None. | [optional] 
  **user_email_address** | **str**| User email address for context (optional) | [optional] 
  **user_email_address_verified** | **bool**| True if the user&#39;s email address was verified (optional) | [optional] 
  **input_file** | **file**| Input document, or photos of a document, to perform fraud detection on | [optional] 

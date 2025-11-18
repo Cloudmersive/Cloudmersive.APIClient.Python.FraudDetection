@@ -138,6 +138,8 @@ class FraudDetectionApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str preprocessing: Optional: Set the level of image pre-processing to enhance accuracy.  Possible values are 'Auto' and 'None'.  Default is Auto.
+        :param str result_cross_check: Optional: Set the level of output accuracy cross-checking to perform on the input.  Possible values are 'None' and 'Advanced'.  Default is None.
         :param str user_email_address: User email address for context (optional)
         :param bool user_email_address_verified: True if the user's email address was verified (optional)
         :param file input_file: Input document, or photos of a document, to perform fraud detection on
@@ -162,6 +164,8 @@ class FraudDetectionApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str preprocessing: Optional: Set the level of image pre-processing to enhance accuracy.  Possible values are 'Auto' and 'None'.  Default is Auto.
+        :param str result_cross_check: Optional: Set the level of output accuracy cross-checking to perform on the input.  Possible values are 'None' and 'Advanced'.  Default is None.
         :param str user_email_address: User email address for context (optional)
         :param bool user_email_address_verified: True if the user's email address was verified (optional)
         :param file input_file: Input document, or photos of a document, to perform fraud detection on
@@ -170,7 +174,7 @@ class FraudDetectionApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_email_address', 'user_email_address_verified', 'input_file']  # noqa: E501
+        all_params = ['preprocessing', 'result_cross_check', 'user_email_address', 'user_email_address_verified', 'input_file']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -193,6 +197,10 @@ class FraudDetectionApi(object):
         query_params = []
 
         header_params = {}
+        if 'preprocessing' in params:
+            header_params['preprocessing'] = params['preprocessing']  # noqa: E501
+        if 'result_cross_check' in params:
+            header_params['resultCrossCheck'] = params['result_cross_check']  # noqa: E501
         if 'user_email_address' in params:
             header_params['UserEmailAddress'] = params['user_email_address']  # noqa: E501
         if 'user_email_address_verified' in params:

@@ -11,7 +11,10 @@ Name | Type | Description | Notes
 **contains_asset_transfer** | **bool** | True if the document contains an asset transfer | [optional] 
 **contains_purchase_agreement** | **bool** | True if the document contains a purchase agreement | [optional] 
 **contains_employment_agreement** | **bool** | True if the document contains an employment agreement | [optional] 
+**contains_expired_document** | **bool** | True if the document is expired | [optional] 
+**contains_ai_generated_content** | **bool** | True if the document contains AI generated content | [optional] 
 **analysis_rationale** | **str** | Rationale on why the document was classified as such | [optional] 
+**document_class** | **str** | Standardized class of the input document | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
